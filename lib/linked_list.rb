@@ -45,17 +45,11 @@ class LinkedList
     if @head.next_node.nil?
       @head = nil
       @tail = nil
-      @size -= 1
       return
-    end
-    node = @head
-    while node.next_node
-      prev = node
-      node = node.next_node
-      if node.next_node.nil?
-        prev.next_node = nil
-        @tail = prev
-      end
+    else
+      second_last = at(@size - 2)
+      second_last.next_node = nil
+      @tail = second_last
     end
     @size -= 1
   end
