@@ -7,6 +7,7 @@ class LinkedList
   def initialize
     @head = nil
     @tail = nil
+    @size = 0
   end
 
   def append(value)
@@ -14,12 +15,19 @@ class LinkedList
     tail.next_node = node unless tail.nil?
     @tail = node
     @head = node if head.nil?
+    @size += 1
   end
 
   def prepend(value)
     node = Node.new(value)
     node.next_node = head unless head.nil?
     @head = node
+    @tail = node if tail.nil?
+    @size += 1
+  end
+
+  def size
+    puts "The size of this linked list is #{@size}"
   end
 end
 
