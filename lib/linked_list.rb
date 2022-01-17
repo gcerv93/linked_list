@@ -29,6 +29,17 @@ class LinkedList
   def size
     puts "The size of this linked list is #{@size}"
   end
+
+  def at(index)
+    i = 0
+    node = @head
+    while node
+      return node if i == index
+
+      node = node.next_node
+      i += 1
+    end
+  end
 end
 
 # class for each node
