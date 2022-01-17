@@ -1,0 +1,1 @@
+I will be creating the linked list project for The Odin Project.
