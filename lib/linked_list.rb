@@ -81,6 +81,15 @@ class LinkedList
     end
     nil
   end
+
+  def to_s
+    node = @head
+    while node
+      print "( #{node.value} ) -> "
+      node = node.next_node
+    end
+    print 'nil'
+  end
 end
 
 # class for each node
