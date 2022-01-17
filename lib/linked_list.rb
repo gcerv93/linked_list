@@ -90,6 +90,13 @@ class LinkedList
     end
     print 'nil'
   end
+
+  def insert_at(value, index)
+    prev = at(index - 1)
+    curr = at(index)
+    prev.next_node = Node.new(value, curr)
+    @size += 1
+  end
 end
 
 # class for each node
