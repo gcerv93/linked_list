@@ -92,10 +92,30 @@ class LinkedList
   end
 
   def insert_at(value, index)
+    return if index > @size + 1 || index.negative?
+
+    @size += 1
+    if index.zero?
+      prepend(value)
+      return
+    end
     prev = at(index - 1)
     curr = at(index)
     prev.next_node = Node.new(value, curr)
-    @size += 1
+  end
+
+  def remove_at(index)
+    return if index > @size + 1 || index.negative?
+
+    @size -= 1
+    if index.zero?
+      @head = @head.next_node
+      return
+    end
+    node = at(index)
+    next_node = node.next_node
+    prev = at(index - 1)
+    prev.next_node = next_node
   end
 end
 
